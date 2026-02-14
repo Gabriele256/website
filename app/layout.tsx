@@ -7,6 +7,9 @@ import Footer from "./_components/footer";
 export const metadata: Metadata = {
     title: "Gabriele Rossi",
     description: "Gabriele's personal portfolio",
+    icons: {
+        icon: "/icon.svg",
+    },
 };
 
 const nunito = Nunito({
