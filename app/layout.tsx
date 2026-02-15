@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const nunito = Nunito({
     subsets: ["latin"],
-    variable: "--font-montserrat",
+    variable: "--font-nunito",
     display: "swap",
 });
 
@@ -31,9 +31,9 @@ export default function RootLayout({
                 suppressHydrationWarning
             >
                 <BackgroundBlobs />
-                <main className="w-full h-full grow flex flex-col min-h-screen">
+                <main className="z-5 w-full h-full flex flex-col min-h-screen">
                     <Header />
-                    <main className="grow">{children}</main>
+                    <main className="grow flex items-center justify-center">{children}</main>
                     <Footer />
                 </main>
             </body>

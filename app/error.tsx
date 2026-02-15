@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { AlertTriangle, RefreshCcw, Home } from "lucide-react";
-import { useEffect, useState } from "react";
 import GlassElement from "./_components/glassElement/glassElement";
 
 export default function Error({
@@ -12,11 +11,6 @@ export default function Error({
     error: Error & { digest?: string };
     reset: () => void;
 }) {
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     return (
         <div className="w-full h-full flex items-center justify-center overflow-hidden">
@@ -30,14 +24,19 @@ export default function Error({
                     <div className="space-y-8 animate-fade-in-up">
                         <div className="flex justify-center">
                             <div className="relative">
-                                <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl animate-pulse" />
-                                <div className="relative flex items-center justify-center w-24 h-24 rounded-full bg-linear-to-br from-blue-500 to-blue-600 shadow-lg shadow-red-500/50">
+                                <GlassElement
+                                    variant="dark"
+                                    blurAmount={1}
+                                    shadowIntensity={1}
+                                    borderRadius={999}
+                                    className="w-full h-full p-4"
+                                >
                                     <AlertTriangle
                                         size={48}
-                                        className="text-white animate-shake"
+                                        className="text-white animate-pulse"
                                         strokeWidth={2}
                                     />
-                                </div>
+                                </GlassElement>
                             </div>
                         </div>
 
@@ -72,8 +71,8 @@ export default function Error({
                                     px-8 py-4 rounded-xl
                                     bg-linear-to-r from-blue-600 to-blue-700
                                     text-white font-semibold text-lg
-                                    shadow-lg shadow-red-500/25
-                                    hover:shadow-xl hover:shadow-red-500/40
+                                    shadow-lg shadow-blue-500/25
+                                    hover:shadow-xl hover:shadow-blue-500/40
                                     hover:scale-105
                                     active:scale-100
                                     transition-all duration-300
