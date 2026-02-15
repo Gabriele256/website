@@ -3,7 +3,7 @@ import GlassElement from "./glassElement/glassElement";
 
 export default function Header() {
     return (
-        <header className="text-white sticky top-4 left-0 z-10">
+        <header className="text-white sticky top-4 left-0 z-50">
             <GlassElement
                 variant="dark"
                 blurAmount={1}

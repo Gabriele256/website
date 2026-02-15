@@ -3,6 +3,7 @@ import "./globals.css";
 import { Nunito } from "next/font/google";
 import Header from "./_components/header";
 import Footer from "./_components/footer";
+import BackgroundBlobs from "./_components/background/BackgroundBlobs";
 
 export const metadata: Metadata = {
     title: "Gabriele Rossi",
@@ -24,14 +25,17 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="dark-flow-bg">
+        <html lang="en">
             <body
-                className={`${nunito.className} m-0 p-0 flex flex-col min-h-screen`}
+                className={`${nunito.className} m-0 p-0`}
                 suppressHydrationWarning
             >
-                <Header />
-                <main className="grow">{children}</main>
-                <Footer />
+                <BackgroundBlobs />
+                <main className="w-full h-full grow flex flex-col min-h-screen">
+                    <Header />
+                    <main className="grow">{children}</main>
+                    <Footer />
+                </main>
             </body>
         </html>
     );

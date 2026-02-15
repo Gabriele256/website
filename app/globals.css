@@ -1,42 +1,34 @@
 @import "tailwindcss";
 
-.dark-flow-bg {
-    background: linear-gradient(-45deg, #000000, #1a1a2e, #16213e, #0f3460);
-    /* background: url("https://images.unsplash.com/photo-1770860354865-415bd1e5af6d?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
-    background-size: 400% 400%;
-
-    animation: gradient-slide 15s ease infinite;
-
-    min-height: 100vh;
-    width: 100%;
-}
-
 ::-webkit-scrollbar {
     width: 0px;
     height: 0px;
 }
 
-.hover-border-animated{
+.hover-border-animated {
     display: inline-block;
 }
-.hover-border-animated::after{
-    content: '';
+
+.hover-border-animated::after {
+    content: "";
     display: block;
-    
-    background-color:white;
-    
+
+    background-color: white;
+
     height: 2px;
     width: 0;
-    
+
     margin: auto;
 
     border-radius: 99px;
-    
+
     transition: width 0.3s;
 }
-.hover-border-animated:hover::after{
+
+.hover-border-animated:hover::after {
     width: 100%;
 }
+
 @keyframes gradient-slide {
     0% {
         background-position: 0% 50%;
