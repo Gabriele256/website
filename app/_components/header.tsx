@@ -21,13 +21,13 @@ export default function Header() {
                         href="/about"
                         className="hover-border-animated cursor-pointer z-2"
                     >
-                        About
+                        About Me
                     </Link>
                     <Link
                         href="/projects"
                         className="hover-border-animated cursor-pointer z-2"
                     >
-                        Projects
+                        My Projects
                     </Link>
                     <Link
                         href="/contacts"

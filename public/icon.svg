@@ -1,14 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#333;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#000;stop-opacity:1" />
+    <linearGradient id="liquid-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#616161" />   <stop offset="50%" stop-color="#b57efc" />   <stop offset="100%" stop-color="#6F00FF" /> </linearGradient>
+
+    <linearGradient id="glass-glare" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.45"/>
+      <stop offset="40%" stop-color="white" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
     </linearGradient>
+    
+    <filter id="inner-glow">
+      <feFlood flood-color="white" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
   </defs>
+
+  <rect x="0" y="0" width="512" height="512" rx="120" fill="url(#liquid-grad)" />
+
+  <rect x="0" y="0" width="512" height="512" rx="120" fill="url(#glass-glare)" />
   
-  <circle cx="50" cy="50" r="48" fill="url(#grad)" />
-  
-  <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" />
-  
-  <text x="50" y="65" font-family="sans-serif" font-weight="bold" font-size="50" text-anchor="middle" fill="white">G</text>
+  <rect x="4" y="4" width="504" height="504" rx="116" fill="none" stroke="white" stroke-width="4" stroke-opacity="0.3" />
+
+  <text 
+    x="50%" 
+    y="55%" 
+    dominant-baseline="middle" 
+    text-anchor="middle" 
+    font-family="'Nunito', 'Segoe UI', sans-serif" 
+    font-weight="800" 
+    font-size="240" 
+    fill="white"
+    letter-spacing="-10"
+    style="text-shadow: 0px 4px 10px rgba(0,0,0,0.2);"
+  >
+    GR
+  </text>
 </svg>
