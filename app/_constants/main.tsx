@@ -1,7 +1,7 @@
 import { CodeIcon, ServerIcon, DatabaseIcon, PaletteIcon } from "lucide-react";
 import { RiReactjsFill, RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiPostgresql } from "react-icons/si";
-import { FaNode, FaDocker, FaPython } from "react-icons/fa";
+import { FaNode, FaDocker } from "react-icons/fa";
 
 export const SERVICES = [
     {
@@ -31,13 +31,22 @@ export const SERVICES = [
 ];
 
 export const FEATURED_TECH = [
-    { icon: <RiReactjsFill size="1.8rem" color="#5bc5dd" />, name: "React" },
-    { icon: <RiNextjsLine size="1.8rem" color="#fff" />, name: "Next.js" },
+    {
+        icon: <RiReactjsFill size="1.8rem" color="#5bc5dd" />,
+        name: "React",
+    },
+    {
+        icon: <RiNextjsLine size="1.8rem" color="#fff" />,
+        name: "Next.js",
+    },
     {
         icon: <SiTypescript size="1.5rem" color="#3178c6" />,
         name: "TypeScript",
     },
-    { icon: <FaNode size="1.8rem" color="#7ec727" />, name: "Node.js" },
+    {
+        icon: <FaNode size="1.8rem" color="#7ec727" />,
+        name: "Node.js",
+    },
     {
         icon: <RiTailwindCssFill size="1.8rem" color="#00b3d1" />,
         name: "Tailwind",
@@ -46,6 +55,8 @@ export const FEATURED_TECH = [
         icon: <SiPostgresql size="1.5rem" color="#31648c" />,
         name: "PostgreSQL",
     },
-    { icon: <FaDocker size="1.8rem" color="#2391e6" />, name: "Docker" },
-    { icon: <FaPython size="1.8rem" color="#f7cb3f" />, name: "Python" },
+    {
+        icon: <FaDocker size="1.8rem" color="#2391e6" />,
+        name: "Docker",
+    },
 ];

@@ -6,6 +6,7 @@ import { ArrowRightIcon } from "lucide-react";
 import GetInTouch from "./_components/CTA/GetInTouch";
 import { FEATURED_TECH, SERVICES } from "./_constants/main";
 import ScrollReveal from "./_components/ScrollReveal";
+import { SOFTWARES_TOOLS_DOCS, TECH_STACK_DOCS } from "./_constants/about";
 
 export default function Home() {
     return (
@@ -55,17 +56,21 @@ export default function Home() {
             <ScrollReveal className="w-[90vw] md:w-[75vw] max-w-6xl">
                 <div className="flex flex-row items-center justify-center gap-6 md:gap-10 flex-wrap py-4">
                     {FEATURED_TECH.map((tech) => (
-                        <div
+                        <Link
                             key={tech.name}
-                            className="flex items-center gap-2 opacity-40 hover:opacity-100 transition-opacity duration-300 group"
+                            className="flex items-center gap-2 lg:opacity-40 md:opacity-100 hover:opacity-100 transition-opacity duration-300 group cursor-pointer"
+                            href={
+                                TECH_STACK_DOCS[tech.name] ||
+                                SOFTWARES_TOOLS_DOCS[tech.name]
+                            }
                         >
-                            <span className="saturate-0 group-hover:saturate-100 transition-all duration-300">
+                            <span className="lg:saturate-0 md:saturate-100 group-hover:saturate-100 transition-all duration-300">
                                 {tech.icon}
                             </span>
                             <span className="text-sm text-white/60 group-hover:text-white font-medium transition-colors hidden md:inline">
                                 {tech.name}
                             </span>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </ScrollReveal>

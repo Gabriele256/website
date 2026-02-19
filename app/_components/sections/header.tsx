@@ -70,6 +70,7 @@ export default function Header() {
                     height={""}
                     borderRadius={20}
                     className="z-100"
+                    simple
                     childrenClassName="flex flex-col w-full"
                 >
                     {NAV_LINKS.map((link) => (
