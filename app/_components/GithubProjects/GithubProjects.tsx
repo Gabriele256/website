@@ -28,7 +28,7 @@ const LANGUAGE_COLORS: Record<string, string> = {
 };
 
 async function getRepos(): Promise<GithubRepo[]> {
-    const res = await fetch(process.env.GITHUB_URL!, {
+    const res = await fetch(process.env.URL!, {
         next: { revalidate: 3600 },
     });
 
