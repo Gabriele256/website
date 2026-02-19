@@ -10,15 +10,13 @@
 }
 
 ::selection {
-    background-color: #1f1f1f;
+    background-color: rgba(168, 85, 247, 0.35);
     color: #ffffff;
-    text-shadow: 0 0 10px #7923a4;
 }
 
 ::-moz-selection {
-    background-color: #1f1f1f;
+    background-color: rgba(168, 85, 247, 0.35);
     color: #ffffff;
-    text-shadow: 0 0 10px #7923a4;
 }
 
 .hover-border-animated {
@@ -54,5 +52,85 @@
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-glow {
+    0%,
+    100% {
+        box-shadow: 0 0 6px 2px rgba(121, 35, 164, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 14px 5px rgba(121, 35, 164, 0.7);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.7s ease-out both;
+}
+
+.animate-delay-1 {
+    animation-delay: 0.1s;
+}
+.animate-delay-2 {
+    animation-delay: 0.2s;
+}
+.animate-delay-3 {
+    animation-delay: 0.3s;
+}
+.animate-delay-4 {
+    animation-delay: 0.4s;
+}
+.animate-delay-5 {
+    animation-delay: 0.5s;
+}
+
+.timeline-dot {
+    animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+.shimmer-bg {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.04) 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes loading-bar {
+    0% {
+        width: 0%;
+        margin-left: 0%;
+    }
+    50% {
+        width: 60%;
+        margin-left: 20%;
+    }
+    100% {
+        width: 0%;
+        margin-left: 100%;
     }
 }

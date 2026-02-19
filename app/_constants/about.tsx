@@ -1,4 +1,10 @@
-import { Terminal } from "lucide-react";
+import {
+    BikeIcon,
+    CodeIcon,
+    GamepadIcon,
+    Terminal,
+    WrenchIcon,
+} from "lucide-react";
 import {
     RiTailwindCssFill,
     RiReactjsFill,
@@ -14,20 +20,17 @@ import {
     SiMysql,
     SiWebstorm,
     SiDatagrip,
-    SiKalilinux,
 } from "react-icons/si";
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
 import { AiOutlineDotNet } from "react-icons/ai";
 import {
     FaNode,
     FaDocker,
-    FaFigma,
-    FaUbuntu,
     FaGitAlt,
     FaGithub,
     FaPython,
+    FaLinkedin,
 } from "react-icons/fa";
-import { FaDebian } from "react-icons/fa6";
 import { BiLogoVisualStudio } from "react-icons/bi";
 
 export const TECH_STACK: string[] = [
@@ -57,7 +60,7 @@ export const SOFTWARES_TOOLS: string[] = [
     "Github",
     "Terminal",
 ];
-const icon_size:string = "2rem";
+const icon_size: string = "2rem";
 
 export const TECH_STACK_ICONS: Record<string, React.ReactNode> = {
     HTML: <RiHtml5Fill size={icon_size} color="#dd4b25" />,
@@ -79,7 +82,9 @@ export const TECH_STACK_ICONS: Record<string, React.ReactNode> = {
 
 export const SOFTWARES_TOOLS_ICONS: Record<string, React.ReactNode> = {
     "Visual Studio": <BiLogoVisualStudio size={icon_size} color="#ab75e9" />,
-    "Visual Studio Code": <BiLogoVisualStudio size={icon_size} color="#25aff3" />,
+    "Visual Studio Code": (
+        <BiLogoVisualStudio size={icon_size} color="#25aff3" />
+    ),
     WebStorm: <SiWebstorm size={icon_size} color="#02c6d1" />,
     DataGrip: <SiDatagrip size={icon_size} color="#b64af0" />,
     Docker: <FaDocker size={icon_size} color="#2391e6" />,
@@ -114,5 +119,73 @@ export const SOFTWARES_TOOLS_DOCS: Record<string, string> = {
     Docker: "https://docs.docker.com/",
     Git: "https://git-scm.com/doc",
     Github: "https://docs.github.com/en",
-    Terminal: "https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line", // O link alla doc specifica della tua shell (Bash/Zsh/Powershell)
+    Terminal:
+        "https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line",
 };
+
+export const STATS = [
+    { label: "Technologies", value: "5+" },
+    { label: "Years Coding", value: "2+" },
+    { label: "console.log() written", value: "Too Much" },
+    { label: "Lines of Code", value: "30k+" },
+];
+
+export const TIMELINE = [
+    {
+        year: "The Beginning",
+        title: "ITST Kennedy (Pordenone, Italy)",
+        description:
+            "Discovered programming and fell in love with it. Started with the basics: C++, C#, Java, Python, HTML, CSS, JavaScript and MySql.",
+    },
+    {
+        year: "Going Deeper",
+        title: "ITS Alto Adriatico (Pordenone, Italy)",
+        description:
+            "Dove into Full-Stack development with React, databases like PostgreSQL, and explored frameworks like Next.js.",
+    },
+    {
+        year: "Today",
+        title: "Always learning, always building.",
+        description: "",
+    },
+];
+
+export const HOBBIES = [
+    {
+        icon: <CodeIcon size="1.5rem" />,
+        name: "Programming",
+        description: "My biggest passion.",
+        color: "#a78bfa",
+    },
+    {
+        icon: <GamepadIcon size="1.5rem" />,
+        name: "Gaming",
+        description: "Strategy, adventure, generally singleplayer.",
+        color: "#34d399",
+    },
+    {
+        icon: <WrenchIcon size="1.5rem" />,
+        name: "Electronics Repair",
+        description: "Bringing broken devices back to life is satisfying.",
+        color: "#fbbf24",
+    },
+    {
+        icon: <BikeIcon size="1.5rem" />,
+        name: "Motorcycles & Cars",
+        description: "Engines, mechanics, and the open road.",
+        color: "#f87171",
+    },
+];
+
+export const SOCIALS = [
+    {
+        name: "Github",
+        icon: <FaGithub />,
+        url: "https://github.com/Gabriele256/",
+    },
+    {
+        name: "LinkedIn",
+        icon: <FaLinkedin />,
+        url: "https://www.linkedin.com/in/gabriele-rossi-7320533b2/",
+    },
+];

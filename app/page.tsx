@@ -1,159 +1,127 @@
-import Image from "next/image";
+import Link from "next/link";
+import GlassSurface from "./_components/GlassSurface/GlassSurface";
 import HeroSection from "./_components/sections/HeroSection";
+import GithubProjects from "./_components/GithubProjects/GithubProjects";
+import { ArrowRightIcon } from "lucide-react";
+import GetInTouch from "./_components/CTA/GetInTouch";
+import { FEATURED_TECH, SERVICES } from "./_constants/main";
+import ScrollReveal from "./_components/ScrollReveal";
 
 export default function Home() {
-    const imgUrl =
-        "https://images.unsplash.com/photo-1770860354865-415bd1e5af6d?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
     return (
-        <div className="grow p-4">
+        <div className="w-full min-h-screen p-4 flex flex-col items-center gap-6">
             <HeroSection>
-                <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-linear-to-br from-white to-white/40">
+                <p className="text-sm font-semibold tracking-widest uppercase text-purple-400/80 animate-fade-in-up">
+                    Aspiring Full Stack Developer &bull; Italy
+                </p>
+                <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-linear-to-br from-white to-white/40 animate-fade-in-up animate-delay-1">
                     I&apos;m Gabriele
                     <br />
-                    Digital Creator From Italy.
+                    I&apos;m Learning to Build
+                    <br />
+                    <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 via-pink-400 to-purple-400 bg-size-[200%_auto] animate-[gradient-slide_4s_ease-in-out_infinite]">
+                        Digital Experiences.
+                    </span>
                 </h1>
-                <p className="text-lg text-white/70 leading-relaxed">
-                    I&apos;m a self-taught full-stack developer that blend
-                    aesthetics and functionality. My goal is to make the web a
-                    cleaner, and more beautiful place.
+                <p className="text-lg text-white/60 leading-relaxed max-w-xl animate-fade-in-up animate-delay-2">
+                    I&apos;m a passionate student diving deep into web
+                    development.
                 </p>
+                <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-3">
+                    <Link
+                        href="/projects"
+                        className="inline-flex items-center gap-2 px-7 py-3 rounded-full
+                            bg-linear-to-r from-purple-600 to-pink-600
+                            hover:from-purple-500 hover:to-pink-500
+                            text-white font-semibold
+                            transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+                    >
+                        See My Projects
+                        <ArrowRightIcon size="1.1em" />
+                    </Link>
+                    <Link
+                        href="/about"
+                        className="inline-flex items-center gap-2 px-7 py-3 rounded-full
+                            bg-white/5 border border-white/10
+                            hover:bg-white/10 hover:border-white/20
+                            text-white font-semibold
+                            transition-all duration-300 hover:scale-105"
+                    >
+                        About Me
+                    </Link>
+                </div>
             </HeroSection>
-            <main className="max-w-6xl mx-auto p-4 mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[200px] gap-4">
-                    <div className="relative md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 1"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 66vw"
-                        />
-                        <div className="absolute bottom-0 left-0 p-4 bg-linear-to-t from-black/60 to-transparent w-full">
-                            <h3 className="text-white font-bold">
-                                Main Feature
-                            </h3>
+
+            <ScrollReveal className="w-[90vw] md:w-[75vw] max-w-6xl">
+                <div className="flex flex-row items-center justify-center gap-6 md:gap-10 flex-wrap py-4">
+                    {FEATURED_TECH.map((tech) => (
+                        <div
+                            key={tech.name}
+                            className="flex items-center gap-2 opacity-40 hover:opacity-100 transition-opacity duration-300 group"
+                        >
+                            <span className="saturate-0 group-hover:saturate-100 transition-all duration-300">
+                                {tech.icon}
+                            </span>
+                            <span className="text-sm text-white/60 group-hover:text-white font-medium transition-colors hidden md:inline">
+                                {tech.name}
+                            </span>
                         </div>
-                    </div>
-
-                    <div className="relative md:col-span-1 md:row-span-2 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 2"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                    </div>
-
-                    <div className="relative md:col-span-2 md:row-span-1 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 3"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 66vw"
-                        />
-                    </div>
-
-                    <div className="relative md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 4"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                    </div>
-
-                    <div className="relative md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 5"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                    </div>
-
-                    <div className="relative md:col-span-2 md:row-span-1 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 6"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 66vw"
-                        />
-                    </div>
+                    ))}
                 </div>
-            </main>
-            <main className="max-w-6xl mx-auto p-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[200px] gap-4">
-                    <div className="relative md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 1"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 66vw"
-                        />
-                        <div className="absolute bottom-0 left-0 p-4 bg-linear-to-t from-black/60 to-transparent w-full">
-                            <h3 className="text-white font-bold">
-                                Main Feature
+            </ScrollReveal>
+
+            <ScrollReveal className="w-[90vw] md:w-[75vw] max-w-6xl">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-linear-to-br from-white to-white/40">
+                    WHAT I&apos;M LEARNING
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {SERVICES.map((service) => (
+                        <GlassSurface
+                            key={service.title}
+                            width={"100%"}
+                            height={""}
+                            className="p-7"
+                            simple
+                            childrenClassName="flex flex-col gap-4 w-full h-full"
+                        >
+                            <div
+                                className="w-12 h-12 rounded-xl flex items-center justify-center"
+                                style={{
+                                    backgroundColor: `${service.color}15`,
+                                    color: service.color,
+                                }}
+                            >
+                                {service.icon}
+                            </div>
+                            <h3 className="text-xl font-bold text-white">
+                                {service.title}
                             </h3>
-                        </div>
-                    </div>
-
-                    <div className="relative md:col-span-1 md:row-span-2 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 2"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                    </div>
-
-                    <div className="relative md:col-span-2 md:row-span-1 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 3"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 66vw"
-                        />
-                    </div>
-
-                    <div className="relative md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 4"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                    </div>
-
-                    <div className="relative md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 5"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                    </div>
-
-                    <div className="relative md:col-span-2 md:row-span-1 rounded-2xl overflow-hidden group">
-                        <Image
-                            src={imgUrl}
-                            alt="Bento Item 6"
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 66vw"
-                        />
-                    </div>
+                            <p className="text-white/50 text-sm leading-relaxed">
+                                {service.description}
+                            </p>
+                        </GlassSurface>
+                    ))}
                 </div>
-            </main>
+            </ScrollReveal>
+
+            <ScrollReveal className="w-[90vw] md:w-[75vw] max-w-6xl">
+                <div className="flex items-end justify-between mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-linear-to-br from-white to-white/40">
+                        MY PROJECTS
+                    </h2>
+                    <Link
+                        href="/projects"
+                        className="text-sm text-white/40 hover:text-white transition-colors flex items-center gap-1"
+                    >
+                        View all <ArrowRightIcon size="0.9em" />
+                    </Link>
+                </div>
+                <GithubProjects />
+            </ScrollReveal>
+
+            <ScrollReveal>
+                <GetInTouch />
+            </ScrollReveal>
         </div>
     );
 }
